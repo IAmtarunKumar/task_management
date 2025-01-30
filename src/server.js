@@ -5,10 +5,12 @@ const taskRouter = require("./routes/taskRouter")
 const app = express()
 app.use(express.json())
 
+require("dotenv").config()
 
 
 
-let Port = 3001
+
+let Port = process.env.port || 3001 
 app.get("/" , async(req,res)=>{
     res.status(200).send("Welcome to our api")
 })
